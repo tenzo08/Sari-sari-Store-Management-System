@@ -7,7 +7,7 @@ Features
 - Sales Tracking: Record daily sales and track the store's profit.
 - Price Management: Modify prices of products when needed.
 
-## Prerequisites
+Prerequisites
 
 Before running the system, ensure you have the following installed on your machine:
 - XAMPP or any other PHP/MySQL server to run Apache and MySQL services.
