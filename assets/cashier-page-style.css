@@ -1,0 +1,276 @@
+/* Base layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* 🔒 Prevent scrolling */
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  overflow: auto;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  height: 85%;
+  border-radius: 10px;
+  margin-top: 20px; /* Spacing from top */
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Cart container styles */
+.cart-container {
+  width: 60%;
+  border-right: 2px solid white ;
+  padding: 20px;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; 
+}
+
+.cart{
+  height: 80%;
+  width: 100%;
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.summary-of-items{
+  height: 20%;
+  width: 100%;
+  border-top: 2px solid white;
+  display: flex;
+  display: row;
+}
+
+h2 {
+  display: inline-block; /* This makes both h2 elements appear in one line */
+}
+
+.total-amount{
+  margin-bottom: 20px;
+}
+
+.amount-summary{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  justify-content: center;
+}
+
+.amount-summary label{
+  font-size: 20px;
+}
+
+.amount-summary input[type="number"] {
+  padding: 12px;
+  font-size: 1em;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #ffffff; /* White border */
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.amount-summary input[type="number"]:focus {
+  border-color: #007bff;
+  background-color: #111;
+}
+
+.checkout-button{
+  width: 30%;
+  display: flex;
+  margin-top: 60px;
+  margin-left: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-button button {
+  display: block;
+  margin: 20px auto 0 auto;
+  margin-top: 10px;
+  width: 50%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button button:hover {
+  background-color: #0056b3;
+}
+
+.inventory-container {
+  width: 40%;
+  height: 100%;
+  padding: 20px;
+  background-color: #1a1a1a; /* Slightly lighter background for contrast */
+  overflow-y: auto; /* Allow vertical scrolling for inventory if content overflows */
+}
+
+/* Back button styling */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #333333;
+}
+
+/* Styling for tables in cart and inventory (example) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cart-container, .inventory-container {
+    width: 100%;
+    border-right: none;
+    margin-bottom: 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}
+
+.cart-container .item, .inventory-container .item {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #333;
+  border-radius: 8px;
+}
+
+/* Container for the item quantity and buttons */
+.item-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for the buttons */
+.decrement, .increment {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.decrement:hover, .increment:hover {
+  background-color: #45a049;
+}
+
+.quantity-input {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0 10px;
+  background-color: #fff;
+  color: black;
+}
+
+.quantity-input:focus {
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.inventory-search {
+  padding: 10px;
+}
+
+.inventory-search input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.inventory-list {
+  overflow-y: auto;
+  max-height: 650px;
+  padding: 10px;
+}
+
+.inventory-item {
+  padding: 8px;
+  border-bottom: 1px solid #444;
+  color: white;
+  font-size: 1rem;
+}
+
+.add-to-cart {
+  justify-self: end;
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-to-cart:hover {
+  background-color: #45a049;
+}
+

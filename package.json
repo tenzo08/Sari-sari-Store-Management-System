@@ -1,0 +1,14 @@
+{
+  "name": "my-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --proxy \"localhost/Sari-sari Store\" --files \"**/*.php\" \"**/*.css\" \"**/*.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.29.3"
+  }
+}

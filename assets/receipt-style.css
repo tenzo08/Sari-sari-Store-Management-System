@@ -1,0 +1,132 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#receipt-container {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Cashier Name and Total Amount Styling */
+p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* Table Styling */
+#receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#receipt-table th,
+#receipt-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#receipt-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+#receipt-items td {
+    font-size: 1em;
+}
+
+#total-amount,
+#change-amount {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#backButton {
+    background-color: #007bff;
+}
+
+#backButton:hover {
+    background-color: #0056b3;
+}
+
+#printReceiptButton {
+    background-color: #ffc107;
+}
+
+#printReceiptButton:hover {
+    background-color: #e0a800;
+}
+
+/* Input Field */
+input[type="number"] {
+    padding: 10px;
+    font-size: 1em;
+    width: 200px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    #receipt-container {
+        width: 80%;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    #receipt-table th, #receipt-table td {
+        font-size: 0.9em;
+    }
+
+    button {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    input[type="number"] {
+        width: 100%;
+    }
+}
