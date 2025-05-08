@@ -1,10 +1,11 @@
-/* Base layout */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* 🔒 Prevent scrolling */
+    overflow: hidden;
     font-family: Arial, sans-serif;
+    color: white;
 }
 
 body {
@@ -13,23 +14,23 @@ body {
     justify-content: center;
     align-items: center;
     background: #000000;
+    overflow: auto;
 }
 
 h1 {
-    font-size: 80px;
-    color: #ffffff; /* White header in dark mode */
+    font-size: 50px;
+    color: #ffffff;
     text-align: center;
     letter-spacing: 1px;
-    margin-top: -200px;
+    margin-bottom: 30px;
 }
 
-/* Back button styling */
 .back-button {
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: #000000; /* Black background */
-    color: white; /* White text */
+    background-color: #000000;
+    color: white;
     padding: 10px 20px;
     font-size: 1rem;
     border-radius: 8px;
@@ -40,51 +41,227 @@ h1 {
 }
 
 .back-button:hover {
-    background-color: #333333; /* Darker gray on hover */
+    background-color: #333333;
 }
 
-
-/* Button container to align buttons */
-.button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 50px;
-    gap: 50px; /* space between the buttons */
-}
-
-.right-options,
-.left-options {
+.add-product-form {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 50px; /* space between the buttons */
-    margin-top: 30px;
+    width: 400px;
+    gap: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    border: 2px solid #4CAF50;
 }
 
-/* Style for the role buttons */
-.role-button {
-    width: 300px; /* Square-like size */
-    height: 300px;
-    font-size: 1.6rem;
-    color: white; /* Text color remains white */
-    background-color: #000000; /* Black background */
-    border: 2px solid white; /* White border */
-    border-radius: 15px; /* rounded corners */
+.add-product-form label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.add-product-form input[type="text"],
+.add-product-form input[type="number"] {
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #000;
+    color: #ffffff;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.add-product-form input[type="text"]:focus,
+.add-product-form input[type="number"]:focus {
+    border-color: #007bff;
+    background-color: #111;
+}
+
+.add-product-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+
+.add-product-form button:hover {
+    background-color: #0056b3;
+}
+
+.add-product-form p {
+    color: #ff4c4c;
+    font-weight: bold;
+    text-align: center;
+}
+
+.edit-product-form, .search-product-form, .delete-product-form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: none; /* No shadow around button */
+    flex-direction: column;
+    align-items: flex-start;
+    width: 20%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    color: white;
 }
 
-.role-button:hover {
-    background-color: #333333; /* Darker gray on hover */
+.edit-product-form label, .search-product-form label {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
-/* Optional: Make the text look neat */
-.role-button:focus {
+.edit-product-form input, .search-product-form input {
+    width: 95%;
+    padding: 10px;
+    font-size: 1em;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 8px;
     outline: none;
+    margin-bottom: 20px;
+    transition: border 0.3s ease, background-color 0.3s ease;
 }
+
+.edit-product-form input:focus, .search-product-form input:focus {
+    border-color: #007bff;
+    background-color: #111;
+}
+
+/* Buttons */
+.edit-product-form button, .search-product-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.edit-product-form button:hover, .search-product-form button:hover {
+    background-color: #0056b3;
+}
+
+.delete-product-form button {
+    background-color: red;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.delete-product-form button:hover {
+    background-color: #cc0000;
+}
+
+/* Success and Error Messages */
+p {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+p.error-message {
+    color: red;
+}
+
+p.success-message {
+    color: green;
+}
+
+/* Back Button Styling */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #333333;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#search_name{
+    margin-bottom: 0px;
+}
+
+#suggestions li {
+    margin-left: -40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+#suggestions li form {
+    margin: 0;
+}
+
+#suggestions button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    width: 100px; 
+    height: 30px; 
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    text-align: center;
+    padding: 0; 
+}
+
+
+#suggestions button:hover {
+    background-color: #1976D2;
+}
+
+#success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+#success-message.show {
+    display: block;
+    opacity: 1;
+}
+
+

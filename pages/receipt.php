@@ -31,7 +31,6 @@
     <button id="backButton">Back to Cashier</button>
   </div>
 
-  <!-- Link to external JS -->
   <script src="../includes/receipt.js"></script>
 </body>
 </html>

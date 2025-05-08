@@ -29,6 +29,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt = $pdo->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, 'administrator')");
             $stmt->execute([$username, $email, $password]);
 
+             $user_id = $pdo->lastInsertId();
+
+             $stmt2 = $pdo->prepare("INSERT INTO cashier_status (user_id, status) VALUES (?, 'pending')");
+             $stmt2->execute([$user_id]);
+
             header("Location: ../index.php");
             exit();
         }
@@ -46,7 +51,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="../assets/signup-style.css">
 </head>
 <body>
-    <!-- Back Button -->
     <a href="signup.php" class="back-button">Back</a>
 
     <h1>Cashier</h1>

@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-    <!-- Back Button -->
     <a href="../index.php" class="back-button">Logout</a>
 
     <h1>Cashier</h1>

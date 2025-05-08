@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-    <!-- Back Button -->
     <a href="../index.php" class="back-button">Back</a>
 
     <h1>Sari-Sari Store<br/>Management System</h1>

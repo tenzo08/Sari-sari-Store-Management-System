@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../assets/cashier-page-style.css">
 </head>
 <body>
-    <!-- Back Button -->
     <a href="../index.php" class="back-button">Logout</a>
 
     <div class="main-container">

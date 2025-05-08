@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../assets/admin-product-management-style.css">
 </head>
 <body>
-    <!-- Back Button -->
     <a href="admin-page.php" class="back-button">Back</a>
 
     <h1>Administrator</h1>

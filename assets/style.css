@@ -1,9 +1,8 @@
-/* Base layout */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* 🔒 Prevent scrolling */
+  overflow: hidden;
   font-family: Arial, sans-serif;
 }
 
@@ -17,7 +16,7 @@ body {
 
 h1 {
   font-size: 80px;
-  color: #ffffff; /* White header in dark mode */
+  color: #ffffff;
   text-align: center;
   margin-top: -200px;
   margin-bottom: 80px;
@@ -26,7 +25,7 @@ h1 {
 
 .pending{
   font-size: 60px;
-  color: green; /* White header in dark mode */
+  color: green;
   text-align: center;
   margin-top: 0px;
   margin-bottom: 80px;
@@ -35,23 +34,22 @@ h1 {
 
 .rejected{
   font-size: 60px;
-  color: red; /* White header in dark mode */
+  color: red;
   text-align: center;
   margin-top: 0px;
   margin-bottom: 80px;
   letter-spacing: 1px;
 }
 
-/* Main container */
 .main-container {
   width: 100%;
   max-width: 400px;
   padding: 30px;
   padding-bottom: 10px;
-  background: #1a1a1a; /* Darker container */
-  border: 2px solid white; /* 👈 this adds the white border */
+  background: #1a1a1a;
+  border: 2px solid white;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05); /* Subtle white glow */
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
 }
 
 fieldset {
@@ -70,14 +68,12 @@ legend {
   color: #ffffff;
 }
 
-/* Error message */
 .error {
   color: #ff4d4d;
   text-align: center;
   margin-bottom: 10px;
 }
 
-/* Input fields */
 .credential-container {
   margin-bottom: 20px;
   display: flex;
@@ -101,7 +97,7 @@ input[type="password"] {
   font-size: 1em;
   background-color: #000;
   color: #fff;
-  border: 1px solid #ffffff; /* White border */
+  border: 1px solid #ffffff;
   border-radius: 8px;
   outline: none;
   transition: border 0.3s ease, background-color 0.3s ease;
@@ -113,7 +109,6 @@ input[type="password"]:focus {
   background-color: #111;
 }
 
-/* Submit button */
 button {
   display: block;
   margin: 20px auto 0 auto;
@@ -142,22 +137,21 @@ button:hover {
 }
 
 .signup-link a {
-  color: #007bff; /* Blue link color */
-  text-decoration: none; /* No underline */
+  color: #007bff;
+  text-decoration: none;
   font-weight: bold;
 }
 
 .signup-link a:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
 }
 
-/* Back button styling */
 .back-button {
   position: absolute;
   top: 20px;
   left: 20px;
-  background-color: #000000; /* Black background */
-  color: white; /* White text */
+  background-color: #000000;
+  color: white;
   padding: 10px 20px;
   font-size: 1rem;
   border-radius: 8px;
@@ -168,41 +162,37 @@ button:hover {
 }
 
 .back-button:hover {
-  background-color: #333333; /* Darker gray on hover */
+  background-color: #333333;
 }
 
-
-/* Button container to align buttons */
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 200px; /* space between the buttons */
+  gap: 200px;
   margin-top: 30px;
 }
 
-/* Style for the role buttons */
 .role-button {
-  width: 300px; /* Square-like size */
+  width: 300px;
   height: 300px;
   font-size: 1.2rem;
-  color: white; /* Text color remains white */
-  background-color: #000000; /* Black background */
-  border: 2px solid white; /* White border */
-  border-radius: 15px; /* rounded corners */
+  color: white;
+  background-color: #000000;
+  border: 2px solid white;
+  border-radius: 15px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: none; /* No shadow around button */
+  box-shadow: none;
 }
 
 .role-button:hover {
-  background-color: #333333; /* Darker gray on hover */
+  background-color: #333333;
 }
 
-/* Optional: Make the text look neat */
 .role-button:focus {
   outline: none;
 }

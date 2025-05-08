@@ -46,7 +46,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="../assets/signup-style.css">
 </head>
 <body>
-    <!-- Back Button -->
     <a href="signup.php" class="back-button">Back</a>
 
     <h1>Administrator</h1>

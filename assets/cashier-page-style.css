@@ -1,9 +1,8 @@
-/* Base layout */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* 🔒 Prevent scrolling */
+  overflow: hidden;
   font-family: Arial, sans-serif;
   color: white;
 }
@@ -23,11 +22,10 @@ body {
   width: 95%;
   height: 85%;
   border-radius: 10px;
-  margin-top: 20px; /* Spacing from top */
-  overflow: hidden; /* Prevent overflow */
+  margin-top: 20px;
+  overflow: hidden;
 }
 
-/* Cart container styles */
 .cart-container {
   width: 60%;
   border-right: 2px solid white ;
@@ -54,7 +52,7 @@ body {
 }
 
 h2 {
-  display: inline-block; /* This makes both h2 elements appear in one line */
+  display: inline-block;
 }
 
 .total-amount{
@@ -78,7 +76,7 @@ h2 {
   font-size: 1em;
   background-color: #000;
   color: #fff;
-  border: 1px solid #ffffff; /* White border */
+  border: 1px solid #ffffff;
   border-radius: 8px;
   outline: none;
   transition: border 0.3s ease, background-color 0.3s ease;
@@ -121,11 +119,10 @@ h2 {
   width: 40%;
   height: 100%;
   padding: 20px;
-  background-color: #1a1a1a; /* Slightly lighter background for contrast */
-  overflow-y: auto; /* Allow vertical scrolling for inventory if content overflows */
+  background-color: #1a1a1a;
+  overflow-y: auto;
 }
 
-/* Back button styling */
 .back-button {
   position: absolute;
   top: 20px;
@@ -145,7 +142,6 @@ h2 {
   background-color: #333333;
 }
 
-/* Styling for tables in cart and inventory (example) */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -186,19 +182,17 @@ th {
   border-radius: 8px;
 }
 
-/* Container for the item quantity and buttons */
 .item-quantity {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Style for the buttons */
 .decrement, .increment {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #4CAF50; /* Green background */
+  background-color: #4CAF50;
   color: white;
   font-size: 18px;
   font-weight: bold;

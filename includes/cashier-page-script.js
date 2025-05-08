@@ -229,39 +229,32 @@ window.onload = () => {
 };
 
 document.getElementById("checkout-button").addEventListener("click", function () {
-    const cartData = cartItems; // Assume cartItems is a global array storing the cart
+    const cartData = cartItems;
 
-    // Get the text content of the total amount, then remove "Total Amount: ₱" and parse it as a number
     const totalAmountText = document.getElementById("total-amount").textContent.replace('Total Amount: ₱', '').trim();
     const totalAmount = parseFloat(totalAmountText);
 
     const amountReceived = parseFloat(document.getElementById("amount-received").value);
 
-    // Debugging: log the values
     console.log("Total Amount Text: " + totalAmountText);
     console.log("Total Amount: " + totalAmount);
     console.log("Amount Received: " + amountReceived);
 
-    // Check if totalAmount is valid (not NaN) and amountReceived is a valid number
     if (!isNaN(totalAmount) && !isNaN(amountReceived)) {
         if (cartData.length > 0 && amountReceived >= totalAmount) {
             const change = amountReceived - totalAmount;
             const cashierName = "<?php echo isset($_SESSION['user']) ? $_SESSION['user'] : 'Unknown'; ?>";
             
-            // Store cart data in localStorage to pass it to the receipt page
             localStorage.setItem("cartData", JSON.stringify(cartData));
-            localStorage.setItem("totalAmount", totalAmount.toFixed(2)); // Ensure totalAmount is a number and formatted as currency
+            localStorage.setItem("totalAmount", totalAmount.toFixed(2));
             localStorage.setItem("cashierName", cashierName);
-            localStorage.setItem("change", change.toFixed(2)); // Format the change as currency
+            localStorage.setItem("change", change.toFixed(2));
             
-            // Redirect to receipt page
             window.location.href = "receipt.php";
         } else {
-            // Show the totalAmount in the alert if the amount received is not sufficient
             alert("Amount received is not sufficient. Total amount is ₱" + totalAmount.toFixed(2) + ". Please provide the correct amount.");
         }
     } else {
-        // Alert if there's an issue with parsing the amount values
         alert("There was an issue with the amount values. Please check and try again.");
     }
 });

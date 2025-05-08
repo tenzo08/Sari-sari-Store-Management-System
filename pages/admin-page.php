@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../assets/admin-page-style.css">
 </head>
 <body>
-    <!-- Back Button -->
     <a href="../index.php" class="back-button">Back</a>
 
     <h1>Administrator</h1>
