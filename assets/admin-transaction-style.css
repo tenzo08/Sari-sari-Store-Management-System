@@ -1,0 +1,125 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    overflow: auto;
+}
+
+h1 {
+    font-size: 50px;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #333333;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+.container {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center ;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 80%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td {
+    background-color: #333;
+}
+
+.info-button, .cancel-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button {
+    background-color: red;
+}
+
+.info-button:hover {
+    background-color: #0056b3;
+}
+
+.cancel-button:hover {
+    background-color: #cc0000;
+}
+
+#success-message, #error-message {
+    display: none;
+    padding: 12px;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#success-message.show {
+    display: block;
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+#error-message.show {
+    display: block;
+    background-color: #ff4c4c;
+    color: #ffffff;
+}

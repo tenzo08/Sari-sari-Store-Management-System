@@ -2,9 +2,9 @@
   "name": "my-system",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.php",
   "scripts": {
-    "start": "browser-sync start --proxy \"localhost/Sari-sari Store\" --files \"**/*.php\" \"**/*.css\" \"**/*.js\""
+    "start": "browser-sync start --proxy \"localhost/Sari-sari-Store-Management-System/index.php\" --files \"**/*.php\" \"**/*.css\" \"**/*.js\""
   },
   "author": "",
   "license": "ISC",

@@ -230,27 +230,41 @@ window.onload = () => {
 
 document.getElementById("checkout-button").addEventListener("click", function () {
     const cartData = cartItems;
-
-    const totalAmountText = document.getElementById("total-amount").textContent.replace('Total Amount: ₱', '').trim();
+    const totalAmountText = document.getElementById("total-amount").textContent.trim();
     const totalAmount = parseFloat(totalAmountText);
-
     const amountReceived = parseFloat(document.getElementById("amount-received").value);
-
-    console.log("Total Amount Text: " + totalAmountText);
-    console.log("Total Amount: " + totalAmount);
-    console.log("Amount Received: " + amountReceived);
-
+    const cashierName = document.getElementById("cashier-name").value;
+    
     if (!isNaN(totalAmount) && !isNaN(amountReceived)) {
         if (cartData.length > 0 && amountReceived >= totalAmount) {
-            const change = amountReceived - totalAmount;
-            const cashierName = "<?php echo isset($_SESSION['user']) ? $_SESSION['user'] : 'Unknown'; ?>";
-            
-            localStorage.setItem("cartData", JSON.stringify(cartData));
-            localStorage.setItem("totalAmount", totalAmount.toFixed(2));
-            localStorage.setItem("cashierName", cashierName);
-            localStorage.setItem("change", change.toFixed(2));
-            
-            window.location.href = "receipt.php";
+            fetch('../includes/saveTransaction.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cashierName: cashierName,
+                    totalAmount: totalAmount,
+                    amountReceived: amountReceived,
+                    cartItems: cartData
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    localStorage.setItem("cartData", JSON.stringify(cartData));
+                    localStorage.setItem("totalAmount", totalAmount.toFixed(2));
+                    localStorage.setItem("cashierName", cashierName);
+                    localStorage.setItem("change", (amountReceived - totalAmount).toFixed(2));
+                    localStorage.setItem("amountTendered", amountReceived.toFixed(2)); // FIXED
+                    window.location.href = "receipt.php";
+                } else {
+                    alert("Transaction could not be saved: " + data.message);
+                }
+            })
+            .catch(error => {
+                alert("An error occurred: " + error);
+            });
         } else {
             alert("Amount received is not sufficient. Total amount is ₱" + totalAmount.toFixed(2) + ". Please provide the correct amount.");
         }
@@ -258,3 +272,5 @@ document.getElementById("checkout-button").addEventListener("click", function ()
         alert("There was an issue with the amount values. Please check and try again.");
     }
 });
+
+ 

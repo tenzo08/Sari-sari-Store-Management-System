@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <a href="../index.php" class="back-button">Logout</a>
 
+    <input type="hidden" id="cashier-name" value="<?php echo htmlspecialchars($_SESSION['user']); ?>">
     <div class="main-container">
         <div class="cart-container">
             <div class="cart">

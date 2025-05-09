@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($existingUser){
             $error = "Username or email already exists.";
         } else{
-            $stmt = $pdo->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, 'administrator')");
+            $stmt = $pdo->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, 'cashier')");
             $stmt->execute([$username, $email, $password]);
 
              $user_id = $pdo->lastInsertId();
